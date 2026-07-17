@@ -1,4 +1,4 @@
-# 通用增量组件库 —— 代码块 · 图片/GIF · 小标签标题
+# 通用增量组件库 —— 代码块 · 图片/GIF · 小标签标题 · 公司二维码
 
 > **跨所有主题通用**。主题专属组件（引言卡、章节标题、签名等）读各自主题库；本文件提供三类**所有主题都需要**的组件：代码块、图片/GIF、小标签标题。
 >
@@ -189,3 +189,30 @@
 | 想给一段起小标题 / 强调 | 3a 左竖条（首选）/ 3b 药丸 / 3c 序号 |
 | `> 金句` | 3d 金句左竖条块 |
 | 提示 / 注意 / 旁注 | 3e 提示左竖条块（**不要用虚线框**） |
+
+---
+
+## 四、公司二维码 CTA（company-qr-cta）
+
+固定资产：`assets/company-wechat-qr.jpg`。生成 HTML 时保留 `{{COMPANY_QR_SRC}}`，随后必须运行 `scripts/embed_company_assets.py` 将其嵌入。不要手工复制 Base64，不要改二维码比例。
+
+位置规则：放在正文结论、服务说明、活动福利/地址/预约说明之后，位于互动三连、END 或品牌尾图之前。全文只出现一次；原文已经提供更具体的群聊码、报名码或个人咨询码时，使用原文二维码并省略本组件。
+
+```html
+<section style="margin:28px 16px 24px;padding:24px 18px;background:#FFFFFF;border:1px solid #E5E7EB;border-radius:16px;text-align:center;box-shadow:0 6px 20px rgba(17,24,39,0.06);">
+  <p style="margin:0 0 6px;font-size:17px;font-weight:800;color:#111827;line-height:1.6;">
+    <span leaf="">需要进一步咨询？</span>
+  </p>
+  <p style="margin:0 0 16px;font-size:13px;color:#6B7280;line-height:1.7;">
+    <span leaf="">长按识别二维码，添加小柚子获取一对一帮助</span>
+  </p>
+  <section style="width:220px;max-width:78%;margin:0 auto;padding:8px;background:#FFFFFF;border:1px solid #F3F4F6;border-radius:12px;overflow:hidden;">
+    <span leaf=""><img src="{{COMPANY_QR_SRC}}" alt="公司微信咨询二维码" style="width:100%;height:auto;display:block;margin:0 auto;"></span>
+  </section>
+  <p style="margin:12px 0 0;font-size:11px;color:#9CA3AF;letter-spacing:1px;line-height:1.6;">
+    <span leaf="">SCAN TO CONNECT</span>
+  </p>
+</section>
+```
+
+蓝色主题可把外框改为 `#D7E4FD`；红色主题可改为 `#FADBD4`。二维码本身始终保持黑白、白边完整。
