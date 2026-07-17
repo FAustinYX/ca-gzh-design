@@ -2,7 +2,7 @@ interface:
   display_name: "CA-gzh-design"
   short_description: "纯文本一键生成公司风格公众号排版与预览"
   brand_color: "#457EF2"
-  default_prompt: "使用 $ca-gzh-design 将这份普通文本自动整理并排成可复制到公众号的公司模板。"
+  default_prompt: "使用 $ca-gzh-design 先用简明中文介绍如何提交文章、图片和模板要求，然后等待我提供内容。"
 
 policy:
   allow_implicit_invocation: true
